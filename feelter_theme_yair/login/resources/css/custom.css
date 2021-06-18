@@ -1,0 +1,57 @@
+form#kc-form-login {
+	font-size: 1rem;
+}
+
+.kc-form-login .pf-c-form__label {
+	font-size: .87rem;
+} 
+
+#kc-form-options .checkbox > label {
+	padding-left: unset;
+}
+
+#kc-form-options .checkbox > label input[type="checkbox"] + span.chackboxValue {
+	display: flex;
+	align-items: center;
+	margin: 0.2em;
+	cursor: pointer;
+	padding: 0.2em;
+}
+
+.checkbox > label input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox > label input[type="checkbox"] + span.chackboxValue::before {
+    content: "✔";
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 1rem;
+    height: 1rem;
+	border: 0.1em solid rgba(56, 166, 64, 1);
+	border-radius: 0.2em;
+	margin-right: 0.5em;
+	color: transparent;
+	transition: .2s;
+}
+
+.checkbox > label input[type="checkbox"]:active + span.chackboxValue::before {
+	transform: scale(0);
+}
+  
+.checkbox > label input[type="checkbox"]:checked + span.chackboxValue::before {
+	color: rgba(56, 166, 64, 1);
+	transform: scale(1);
+}
+
+#kc-form-login .forgotPassContainer {
+	padding-top: .5rem;
+}
+
+#kc-form-login .forgotPass {
+	font-size: 1rem;
+    color: rgba(255, 68, 45, 1)
+    /* text-decoration: none; */
+    /* padding-left: .5rem; */
+}

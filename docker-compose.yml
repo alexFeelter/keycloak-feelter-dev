@@ -1,0 +1,41 @@
+version: '3'
+
+volumes:
+  mysql_data4:
+      driver: local
+  alex_volume:
+      driver: local
+
+services:
+  mysql4:
+      image: mysql:5.7
+      volumes:
+        - mysql_data4:/var/lib/mysql
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: keycloak
+        MYSQL_USER: keycloak
+        MYSQL_PASSWORD: password
+  
+  keycloak33:
+      container_name: 'local-keycloack-with-volume-yair2'
+      # network_mode: host
+      image: quay.io/keycloak/keycloak:latest
+      environment:
+        DB_VENDOR: MYSQL
+        DB_ADDR: mysql4
+        DB_DATABASE: keycloak
+        DB_USER: keycloak
+        DB_PASSWORD: password
+        KEYCLOAK_USER: admin
+        KEYCLOAK_PASSWORD: Pa55w0rd
+        # Uncomment the line below if you want to specify JDBC parameters. The parameter below is just an example, and it shouldn't be used in production without knowledge. It is highly recommended that you read the MySQL JDBC driver documentation in order to use it.
+        #JDBC_PARAMS: "connectTimeout=30000"
+        #JDBC_PARAMS: “enabledTLSProtocols=TLSv1.2&useSSL=false&connectTimeout=30000”
+      volumes:
+        - alex_volume:/opt/jboss/keycloak/themes/feelter_theme1
+        - ./feelter_theme_yair:/opt/jboss/keycloak/themes/feelter_theme_yair
+      ports:
+        - 9999:8080  
+      depends_on:
+        - mysql4
