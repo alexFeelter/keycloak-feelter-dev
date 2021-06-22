@@ -1,3 +1,11 @@
+.bodyLogin {
+	display: flex;
+}
+
+.bodyLogin > * {
+	width: 50%;
+}
+
 form#kc-form-login {
 	font-size: 1rem;
 }
@@ -54,4 +62,51 @@ form#kc-form-login {
     color: rgba(255, 68, 45, 1)
     /* text-decoration: none; */
     /* padding-left: .5rem; */
+}
+
+
+.login-pf-page {
+	padding: 0;
+}
+
+#kc-header {
+    display: none;
+}
+
+.login-pf-page {
+	height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.card-pf {
+	width: 100%;
+}
+
+form#kc-reset-password-form + #kc-info {
+	display: none;
+}
+
+/* login social */
+
+div.socialAccContainer {
+	display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+    grid-gap: 1rem;
+    margin: 1rem 0;
+	--pf-l-grid__item--GridColumnEnd: inherit
+}
+
+div.socialAccContainer > .socialAcc {
+	width: fit-content;
+}
+
+div.socialAccContainer > .socialAcc .socialIconText {
+	display: none;
+}
+
+.fa-instagram:before {
+	content: url("${url.resourcesPath}/img/facebookOrg.svg");
 }

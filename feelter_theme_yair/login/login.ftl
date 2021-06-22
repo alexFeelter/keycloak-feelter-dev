@@ -7,6 +7,28 @@
       <div id="kc-form-wrapper">
         <#if realm.password>
             <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
+
+        <#if realm.password && social.providers??>
+            <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
+                <hr/>
+                <h4>${msg("identity-provider-login-label")}</h4>
+
+                <div class="socialAccContainer ${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountListGridClass!}</#if>">
+                    <#list social.providers as p>
+                        <a id="social-${p.alias}" class="socialAcc ${properties.kcFormSocialAccountListButtonClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountGridItem!}</#if>"
+                                type="button" href="${p.loginUrl}">
+                            <#if p.iconClasses?has_content>
+                                <i class="${properties.kcCommonLogoIdP!} ${p.iconClasses!}" aria-hidden="true"></i>
+                                <span class="socialIconText ${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${p.displayName!}</span>
+                            <#else>
+                                <span class="${properties.kcFormSocialAccountNameClass!}">${p.displayName!}</span>
+                            </#if>
+                        </a>
+                    </#list>
+                </div>
+            </div>
+        </#if>
+
                 <div class="${properties.kcFormGroupClass!}">
                     <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
 
@@ -64,27 +86,6 @@
             </form>
         </#if>
         </div>
-
-        <#if realm.password && social.providers??>
-            <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
-                <hr/>
-                <h4>${msg("identity-provider-login-label")}</h4>
-
-                <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountListGridClass!}</#if>">
-                    <#list social.providers as p>
-                        <a id="social-${p.alias}" class="${properties.kcFormSocialAccountListButtonClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountGridItem!}</#if>"
-                                type="button" href="${p.loginUrl}">
-                            <#if p.iconClasses?has_content>
-                                <i class="${properties.kcCommonLogoIdP!} ${p.iconClasses!}" aria-hidden="true"></i>
-                                <span class="${properties.kcFormSocialAccountNameClass!} kc-social-icon-text">${p.displayName!}</span>
-                            <#else>
-                                <span class="${properties.kcFormSocialAccountNameClass!}">${p.displayName!}</span>
-                            </#if>
-                        </a>
-                    </#list>
-                </ul>
-            </div>
-        </#if>
 
     </div>
     <#elseif section = "info" >
