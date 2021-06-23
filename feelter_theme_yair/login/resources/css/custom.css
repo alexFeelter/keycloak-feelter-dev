@@ -1,17 +1,58 @@
-.bodyLogin {
-	display: flex;
+.card-pf {
+	max-width: 650px;
+	width: 100%;
+	box-shadow: none;
+	border-top: none;
 }
+
+.pf-c-form-control {
+	border: 1px solid rgba(228, 230, 239, 1);
+}
+
+.pf-c-form-control:hover, .pf-c-form-control:focus {
+	border-bottom: 1px solid rgba(228, 230, 239, 1);
+}
+
+/* Login Page */
+
+.login-pf .bodyLogin {
+	display: flex;
+	background-color: #fff;
+}
+
+h2#kc-page-title {
+	font-size: 30px;
+	font-weight: 700;
+	color: rgba(50, 59, 75, 1);
+	display: flex;
+    justify-content: center;
+}
+
+.bodyLogin .regLogin {
+	display: flex;
+	justify-content: center;
+    margin-top: 1rem;
+	font-size: 1rem;
+	font-weight: 600;
+} 
 
 .bodyLogin > * {
 	width: 50%;
+}
+
+.bodyLogin a {
+	margin-left: 0.6rem;
+	color: rgba(56, 166, 64, 1);
+	border: none;
 }
 
 form#kc-form-login {
 	font-size: 1rem;
 }
 
-.kc-form-login .pf-c-form__label {
+form .pf-c-form__label {
 	font-size: .87rem;
+	padding-bottom: 4px;
 } 
 
 #kc-form-options .checkbox > label {
@@ -53,11 +94,26 @@ form#kc-form-login {
 	transform: scale(1);
 }
 
-#kc-form-login .forgotPassContainer {
+.orLine {
+	display: flex;
+	font-size: 18px;
+}
+
+.orLine::before,
+.orLine::after {
+	content: '';
+	position: relative;
+	flex: 1;
+	border-bottom: 1px solid #E4E6EF;
+	margin: auto 0.25em;
+	padding-top: 4px;
+}
+
+#kc-form-login .forgotPassLinkContainer {
 	padding-top: .5rem;
 }
 
-#kc-form-login .forgotPass {
+#kc-form-login .forgotPassLink {
 	font-size: 1rem;
     color: rgba(255, 68, 45, 1)
     /* text-decoration: none; */
@@ -79,13 +135,8 @@ form#kc-form-login {
     align-items: center;
 }
 
-.card-pf {
-	width: 100%;
-}
 
-form#kc-reset-password-form + #kc-info {
-	display: none;
-}
+
 
 /* login social */
 
@@ -101,12 +152,95 @@ div.socialAccContainer {
 
 div.socialAccContainer > .socialAcc {
 	width: fit-content;
+	padding: 0.8rem 1.5rem;
 }
 
 div.socialAccContainer > .socialAcc .socialIconText {
 	display: none;
 }
 
-.fa-instagram:before {
-	content: url("${url.resourcesPath}/img/facebookOrg.svg");
+.login-pf a:hover {
+	color: inherit;
+}
+
+.kc-social-provider-logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.fa-facebook:before {
+	content: url("../img/facebookOrg.svg");
+}
+
+.fa-google:before {
+	content: url("../img/googleOrg.svg");
+}
+
+.fa-linkedin:before {
+	content: url("../img/linkedinOrg.svg");
+}
+
+.fa-twitter:before {
+	content: url("../img/twitterOrg.svg");
+}
+
+.form-group .loginSubmit {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 1rem 1.5rem;
+	background-color: rgba(56, 166, 64, 1);
+	border: none;
+	border-radius: 1px;
+	color: rgba(255, 255, 255, 1);
+	/* margin-top: 1.5rem; */
+}
+
+aside.feelterReason {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	background: rgba(56, 166, 64, 0.04);
+	padding: 6.5rem 0;
+}
+
+/* Reset password */
+
+.login-pf body.resetPass {
+	background-color: #fff;
+}
+
+.login-pf body.resetPass .card-pf {
+	max-width: 600px;
+}
+
+.login-pf body.resetPass header.login-pf-header {
+	align-items: center;
+}
+
+.login-pf body.resetPass #kc-content {
+	max-width: 23.5rem;
+	margin: auto;
+}
+
+form#kc-reset-password-form + #kc-info {
+	display: none;
+}
+
+
+
+/* input:focus-visible {
+	border-color: #959595;
+	outline-offset: 0px;
+} */
+
+input:focus {
+	color: #3f4254;
+	background-color: #fff;
+	border: 1px solid #959595;
+	outline: 0;
+	box-shadow: none;
 }

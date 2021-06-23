@@ -1,10 +1,5 @@
-<#import "template.ftl" as layout>
+<#import "templateForgotPass.ftl" as layout>
 <@layout.registrationLayout displayInfo=true displayMessage=!messagesPerField.existsError('username'); section>
-    <header>
-        <a href="https://feelter.com/">
-          <img alt="Qries" src="${url.resourcesPath}/img/feelter.png" width=150" height="70">  
-        </a>
-    </header>
     <#if section = "header">
         ${msg("emailForgotTitle")}
     <#elseif section = "form">
@@ -28,14 +23,8 @@
                 </div>
             </div>
             <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                        <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
-                    </div>
-                </div>
-
                 <div id="kc-form-buttons" class="forgotPassSubmitContainer ${properties.kcFormButtonsClass!}">
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}"/>
+                    <input class="loginSubmit ${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}"/>
                 </div>
             </div>
         </form>

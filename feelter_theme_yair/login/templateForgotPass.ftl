@@ -36,7 +36,7 @@
 		</#if>
 	</head>
 
-	<body class="bodyLogin ${properties.kcBodyClass!}">
+	<body class="resetPass ${properties.kcBodyClass!}">
 	<div class="${properties.kcLoginClass!}">
 		<div id="kc-header" class="${properties.kcHeaderClass!}">
 			<div id="kc-header-wrapper"
@@ -44,6 +44,9 @@
 		</div>
 		<div class="${properties.kcFormCardClass!}">
 			<header class="${properties.kcFormHeaderClass!}">
+            <a href="https://feelter.com/">
+				<img alt="Feelter" src="${url.resourcesPath}/img/feelter.png" width="150" height="70">  
+			</a>
 				<#if realm.internationalizationEnabled  && locale.supported?size gt 1>
 					<div class="${properties.kcLocaleMainClass!}" id="kc-locale">
 						<div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
@@ -67,11 +70,11 @@
 							<span class="subtitle"><span class="required">*</span> ${msg("requiredFields")}</span>
 						</div>
 						<div class="col-md-10">
-							<h1 id="kc-page-title"><#nested "header"></h1>
+							<h2 id="kc-page-title"><#nested "header"></h2>
 						</div>
 					</div>
 				<#else>
-					<h1 id="kc-page-title"><#nested "header"></h1>
+					<h2 id="kc-page-title"><#nested "header"></h2>
 				</#if>
 			<#else>
 				<#if displayRequiredFields>
@@ -147,7 +150,6 @@
 
 		</div>
 	</div>
-        <section>sdf</section>
 	</body>
 </html>
 </#macro>

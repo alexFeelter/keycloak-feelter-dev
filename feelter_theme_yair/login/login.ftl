@@ -10,9 +10,6 @@
 
         <#if realm.password && social.providers??>
             <div id="kc-social-providers" class="${properties.kcFormSocialAccountSectionClass!}">
-                <hr/>
-                <h4>${msg("identity-provider-login-label")}</h4>
-
                 <div class="socialAccContainer ${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountListGridClass!}</#if>">
                     <#list social.providers as p>
                         <a id="social-${p.alias}" class="socialAcc ${properties.kcFormSocialAccountListButtonClass!} <#if social.providers?size gt 3>${properties.kcFormSocialAccountGridItem!}</#if>"
@@ -26,6 +23,7 @@
                         </a>
                     </#list>
                 </div>
+                <p class="orLine">${msg("identity-provider-login-label")}</p>
             </div>
         </#if>
 
@@ -71,9 +69,9 @@
                             </div>
                         </#if>
                         </div>
-                        <div class="forgotPassContainer ${properties.kcFormOptionsWrapperClass!}">
+                        <div class="forgotPassLinkContainer ${properties.kcFormOptionsWrapperClass!}">
                             <#if realm.resetPasswordAllowed>
-                                <span><a tabindex="5" href="${url.loginResetCredentialsUrl}" class="forgotPass">${msg("doForgotPassword")}</a></span>
+                                <span><a tabindex="5" href="${url.loginResetCredentialsUrl}" class="forgotPassLink">${msg("doForgotPassword")}</a></span>
                             </#if>
                         </div>
 
@@ -81,7 +79,7 @@
 
                   <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
                       <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if>/>
-                      <input tabindex="4" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                      <input tabindex="4" class="loginSubmit ${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
                   </div>
             </form>
         </#if>
@@ -98,5 +96,4 @@
             </div>
         </#if>
     </#if>
-
 </@layout.registrationLayout>

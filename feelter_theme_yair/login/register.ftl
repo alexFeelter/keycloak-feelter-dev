@@ -1,4 +1,4 @@
-<#import "template.ftl" as layout>
+<#import "templateSign.ftl" as layout>
 <@layout.registrationLayout displayMessage=!messagesPerField.existsError('firstName','lastName','email','username','password','password-confirm'); section>
     <#if section = "header">
         ${msg("registerTitle")}
@@ -92,7 +92,7 @@
             <div class="${properties.kcFormGroupClass!}">
                 
                 <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doRegister")}"/>
+                    <input class="loginSubmit ${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doRegister")}"/>
                 </div>
                 
                 <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
