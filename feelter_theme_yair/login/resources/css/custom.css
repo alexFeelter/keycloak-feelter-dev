@@ -25,13 +25,19 @@ h2#kc-page-title {
 	font-weight: 700;
 	color: rgba(50, 59, 75, 1);
 	display: flex;
-    justify-content: center;
+	justify-content: center;
+}
+
+
+.login-pf body.bodyLogin  form#kc-register-form {
+	max-width: 450px;
+    margin: auto;
 }
 
 .bodyLogin .regLogin {
 	display: flex;
 	justify-content: center;
-    margin-top: 1rem;
+	margin-top: 1rem;
 	font-size: 1rem;
 	font-weight: 600;
 } 
@@ -68,16 +74,16 @@ form .pf-c-form__label {
 }
 
 .checkbox > label input[type="checkbox"] {
-    display: none;
+	display: none;
 }
 
 .checkbox > label input[type="checkbox"] + span.chackboxValue::before {
-    content: "✔";
+	content: "✔";
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 1rem;
-    height: 1rem;
+	height: 1rem;
 	border: 0.1em solid rgba(56, 166, 64, 1);
 	border-radius: 0.2em;
 	margin-right: 0.5em;
@@ -115,9 +121,9 @@ form .pf-c-form__label {
 
 #kc-form-login .forgotPassLink {
 	font-size: 1rem;
-    color: rgba(255, 68, 45, 1)
-    /* text-decoration: none; */
-    /* padding-left: .5rem; */
+	color: rgba(255, 68, 45, 1)
+	/* text-decoration: none; */
+	/* padding-left: .5rem; */
 }
 
 
@@ -126,13 +132,13 @@ form .pf-c-form__label {
 }
 
 #kc-header {
-    display: none;
+	display: none;
 }
 
 .login-pf-page {
 	height: inherit;
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 
@@ -142,12 +148,17 @@ form .pf-c-form__label {
 
 div.socialAccContainer {
 	display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(5, 1fr);
-    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-    grid-gap: 1rem;
-    margin: 1rem 0;
+	grid-template-rows: auto;
+	grid-template-columns: repeat(5, 1fr);
+	/* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+	grid-gap: 1rem;
+	margin: 1rem 0;
 	--pf-l-grid__item--GridColumnEnd: inherit
+}
+
+.carouselContainer > button.limited {
+	background-color: rgba(56, 166, 64, 1);
+	color: rgba(255, 255, 255, 1);
 }
 
 div.socialAccContainer > .socialAcc {
@@ -201,10 +212,10 @@ div.socialAccContainer > .socialAcc .socialIconText {
 
 aside.feelterReason {
 	display: flex;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 	background: rgba(56, 166, 64, 0.04);
-	padding: 6.5rem 0;
+	padding: 5% 0;
 }
 
 /* Reset password */
@@ -243,4 +254,97 @@ input:focus {
 	border: 1px solid #959595;
 	outline: 0;
 	box-shadow: none;
+}
+
+.feelterReason .feelterAdvantages{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.feelterReason .feelterAdvantages img {
+	max-width: 38rem;
+	width: 100%;
+	height: auto;
+}
+
+/* carousel */
+
+.carouselContaner {
+	max-width: 450px;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 15px;
+	box-shadow: 0px 2px 30px 0px rgb(194 200 205 / 25%);
+}
+
+.slick-slider {
+	display: flex;
+	align-items: center;
+	box-shadow: 0px 2px 30px rgba(194, 200, 205, 0.25);
+}
+
+.prevArrow {
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgba(56, 166, 64, 1);
+	padding: 8px 13px;
+	font-size: 1rem;
+	border-radius: 50%;
+	color: rgba(56, 166, 64, 1);
+	transform: translateX(-20px);
+	cursor: pointer;
+}
+
+.nextArrow {
+	background-color: rgb(255, 255, 255);
+	border: 1px solid rgba(56, 166, 64, 1);
+	padding: 8px 13px;
+	font-size: 1rem;
+	border-radius: 50%;
+	color: rgba(56, 166, 64, 1);
+	transform: translateX(25px);
+	cursor: pointer;
+}
+
+.carouselContainer {
+	display: flex;
+    padding-top: 2rem;
+    background-color: #fff;
+    align-items: center;
+    max-width: 400px;
+}
+
+.carouselContainer > div.carouselProdContainer {
+	display: flex;
+	width: 300px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+}
+
+.carouselContainer > div.carouselProdContainer > div.carouselProd {
+	max-width: 100%;
+	display: flex;
+	flex-shrink: 0;
+	scroll-snap-align: start;
+	box-sizing: border-box;
+}
+
+.carouselProdTextCont {
+	padding-left: 1.5rem;
+	padding-bottom: 2.5rem;
+	max-width: 240px;
+}
+
+.carouselProdTextCont > h4 {
+	margin: 0;
+}
+
+.carouselProdTextCont > .carouselProdPosition {
+	margin: 0;
+	padding-top: .5rem;
+	font-size: 1.2rem;
+}
+
+.carouselProdPic {
+	border-radius: 15px;
+	align-self: baseline;
 }
