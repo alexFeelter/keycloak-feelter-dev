@@ -154,7 +154,7 @@
 			<section>
 				<h2 id="kc-page-title">Why Choose Feelter?</h2>
 				<div class="carouselContainer">
-					<button id="prevCarouselArrow" class="prevArrow">🡨</button>
+					<button id="prevCarouselArrow" class="carouselArrow prevArrow">🡨</button>
 					<div class="carouselProdContainer">
 						<div class="carouselProd">
 							<img class="carouselProdPic" src="http://localhost:4000/image.jpg" alt="carousel pic 1" width="72px" height="72px" />
@@ -205,7 +205,7 @@
 							</div>
 						</div>
 					</div>
-					<button id="nextCarouselArrow" class="nextArrow">🡪</button>
+					<button id="nextCarouselArrow" class="carouselArrow nextArrow active">🡪</button>
 				</div>
 			</section>
 			<div class="feelterAdvantages">
@@ -214,23 +214,5 @@
 			</div>
 		</aside>
 	</body>
-
-			<#--  <template>
-				<div class="carouselContainer">
-					<span class="prevArrow"></span>
-					<div class="carouselProdContainer">
-						<div class="carouselProd">
-							<img class="carouselProdPic" src="" alt="" width="72px" height="72px" />
-							<div class="carouselProdTextCont">
-								<h4></h4>
-								<p class="carouselProdPosition"></p>
-								<p></p>
-							</div>
-						</div>
-					</div>
-					<span class="nextArrow"></span>
-				</div>
-			</template>  -->
-
 </html>
 </#macro>

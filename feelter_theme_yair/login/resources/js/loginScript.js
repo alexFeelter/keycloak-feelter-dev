@@ -1,41 +1,37 @@
 window.addEventListener("load", async () => {
-	// const fetchPromise = fetch("http://localhost:4000/data")
-	// const dataPromise = fetchPromise.then(res => res.json())
-	// dataPromise.then(data => console.log(data))
-
 	const res = await fetch("http://localhost:4000/data")
 	const data = await res.json()
-	
-	// axios('localhost').then(data => console.log(data))
-	// const data = await axios("http://localhost:4000/data")
-	// console.log(data)
-	
-	// await fetch("http://localhost:4000/data")
-	// 	.then(res => res.json())
 
-	console.log(data.length)
-	
 	let nextArrow = document.querySelector("#nextCarouselArrow")
 	let prevArrow = document.querySelector("#prevCarouselArrow")
 	let counter = 0
+
+	const carouselProd = document.querySelector(".carouselProdContainer")
+	const carouselProdWidth = carouselProd.offsetWidth
 	
 	const nextArrowClick = () => {
-		// for(var i = 0; i <= data.length)
-		if(counter < data.length) {
-			nextArrow.classList.remove("limited")
+		carouselProd.scrollTo({ left: carouselProdWidth + carouselProd.scrollLeft, behavior: 'smooth' })
+		if (counter < data.length - 1) {
 			counter += 1
+		}
+		
+		if(counter < data.length - 1) {
+			prevArrow.classList.add("active")
 		} else {
-			nextArrow.classList.add("limited")
+			nextArrow.classList.remove("active")
 		}
 	}
 
 	const prevArrowClick = () => {
-		// for(var i = 0; i <= data.length)
-		if(counter > 0) {
-			prevArrow.classList.remove("limited")
+		carouselProd.scrollTo({ left: carouselProd.scrollLeft - carouselProdWidth, behavior: 'smooth' })
+		if (counter > 0) {
 			counter -= 1
+		}
+		
+		if(counter > 0) {
+			nextArrow.classList.add("active")
 		} else {
-			prevArrow.classList.add("limited")
+			prevArrow.classList.remove("active")
 		}
 	}
 
